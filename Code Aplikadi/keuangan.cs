@@ -165,24 +165,17 @@ namespace WinFormsApp1
 
         private void addParameters(string str)
         {
-            //string anggota = cmbAnggota.SelectedItem.ToString();
-            //string getId_anggotaQuery = string.Format("select id_anggota from keuangan.anggota where nama = '{0}'", anggota);
-            //CRUD.cmd = new NpgsqlCommand(getId_anggotaQuery, CRUD.con);
-            //DataTable dt1 = CRUD.PerformCRUD(CRUD.cmd);
-            //CRUD.con.Close();
-
-            //string idanggota = id_anggota();
+            
 
 
             CRUD.cmd.Parameters.Clear();
 
             CRUD.cmd.Parameters.AddWithValue("jumlah_uang", Convert.ToInt32(TxtjumlahUang.Texts.Trim()));
             CRUD.cmd.Parameters.AddWithValue("keterangan", TxtKeterangan.Texts.Trim());
-            //CRUD.cmd.Parameters.AddWithValue("id_anggota", idanggota.Trim());
+            
             int getJenis = cmbJenis.SelectedIndex + 1;
             CRUD.cmd.Parameters.AddWithValue("jenis", getJenis);
-            //CRUD.cmd.Parameters.AddWithValue("id_anggota", Convert.ToInt32(id_anggota()));
-
+            
 
 
 
@@ -195,36 +188,7 @@ namespace WinFormsApp1
             }
         }
         
-        //private void addIdanggota()
-        //{
-        //    CRUD.con.Open();
-        //    CRUD.cmd = CRUD.con.CreateCommand();
-        //    string anggota= cmbAnggota.SelectedItem.ToString();
-        //    string thecmd = string.Format("select id_anggota from keuangan.anggota where nama = '{0}'", anggota);
-        //    CRUD.cmd = new NpgsqlCommand(CRUD.sql, CRUD.con);
-        //    CRUD.cmd.Parameters.Clear();
-        //    DataTable dt = CRUD.PerformCRUD(CRUD.cmd);
-        //    CRUD.cmd.Parameters.AddWithValue("id_anggota", Convert.ToInt32(dt.ToString()));
-        //}
-
-        //private void addIdJenis()
-        //{
-        //    CRUD.con.Open();
-        //    CRUD.cmd = CRUD.con.CreateCommand();
-        //    string jenis = cmbJenis.SelectedItem.ToString();
-        //    string thecmd = string.Format("select id_jenis from keuangan.kas where jenis = '{0}'", jenis);
-        //    CRUD.sql = thecmd;
-        //    CRUD.cmd = new NpgsqlCommand(CRUD.sql, CRUD.con);
-        //    CRUD.cmd.Parameters.Clear();
-        //    DataTable dt = CRUD.PerformCRUD(CRUD.cmd);
-        //    dt = CRUD.PerformCRUD(CRUD.cmd);
-        //    CRUD.cmd.Parameters.AddWithValue("id_jenis", Convert.ToInt32(dt.ToString()));
-        //}
-
-        //private void button1_Click(object sender, EventArgs e)
-        //{
-           
-        //}
+        
 
         private void TambahBtn_Click(object sender, EventArgs e)
         {
